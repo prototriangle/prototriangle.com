@@ -1,28 +1,99 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <Cover>
+            <template v-slot:upper-box>
+                <h1 class="inset">prototriangle</h1>
+            </template>
+            <template v-slot:lower-box>
+                <NavBar :menu="menu"/>
+            </template>
+            <template v-slot:right-box>
+                <!--suppress HtmlUnknownTarget -->
+                <!--<img :src="logoURL" :alt="logoAltText">-->
+                <LogoIK/>
+            </template>
+        </Cover>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import Normalize from 'normalize-css'
+    import Cover from "@/view/Cover";
+    import NavBar from "@/components/NavBar";
+    import LogoIK from "@/components/LogoIK";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            Cover,
+            NavBar,
+            LogoIK
+        },
+        data: function () {
+            return {
+                logoURL: require('./assets/logo-masked.svg'),
+                logoAltText: "prototriangle logo",
+                menu: [
+                    {
+                        text: "about",
+                        url: "#about"
+                    },
+                    {
+                        text: "portfolio",
+                        submenu: [
+                            {
+                                text: "current projects",
+                                url: "/current"
+                            },
+                            {
+                                text: "past projects",
+                                url: "/past"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        Normalize
+    }
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    html {
+        font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/cubes.png");
+        background-position-x: center;
+    }
+
+    #app {
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    h1 {
+        font-family: "Roboto Slab", serif;
+        font-weight: bold;
+        font-size: 3rem;
+        /*text-align: center;*/
+        margin: 0;
+    }
+
+    h1.inset {
+        background-color: #000000;
+        color: transparent;
+        text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.43);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+    }
+
 </style>
