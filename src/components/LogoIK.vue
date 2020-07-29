@@ -163,7 +163,7 @@
         },
         data: function () {
             return {
-                eeAngle: 45,
+                eeAngle: 6,
                 targetPoint: initPoints[initPoints.length - 1],
                 tweenPoint: initPoints[initPoints.length - 1],
                 tweenVector: {x: 0, y: 0},
