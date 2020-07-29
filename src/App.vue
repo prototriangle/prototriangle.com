@@ -1,8 +1,9 @@
 <template>
-    <div id="app">
+    <div id="app" @click="clickHandler">
+        <LogoIK :click-event="clickEvent" :id-string="svgID" :origin="armOrigin"/>
         <Cover>
             <template v-slot:upper-box>
-                <h1 class="inset">prototriangle</h1>
+                <h1 id="main-title" class="inset">prototriangle</h1>
             </template>
             <template v-slot:lower-box>
                 <NavBar :menu="menu"/>
@@ -10,7 +11,6 @@
             <template v-slot:right-box>
                 <!--suppress HtmlUnknownTarget -->
                 <!--<img :src="logoURL" :alt="logoAltText">-->
-                <LogoIK/>
             </template>
         </Cover>
     </div>
@@ -29,8 +29,35 @@
             NavBar,
             LogoIK
         },
+        created() {
+            window.addEventListener("resize", this.resizeHandler);
+            window.setTimeout(this.resizeHandler, 10);
+        },
+        destroyed() {
+            window.removeEventListener("resize", this.resizeHandler);
+        },
+        methods: {
+            clickHandler(evt) {
+                this.clickEvent = {x: evt.clientX, y: evt.clientY, valid: true};
+                console.log(JSON.stringify(this.clickEvent));
+            },
+            resizeHandler() {
+                const r = document.getElementById("main-title").getBoundingClientRect();
+                // this.armOrigin = {x: window.innerWidth / 2, y: window.innerHeight / 2};
+                this.armOrigin = {x: r.x + this.originOffset.x, y: r.y + this.originOffset.y};
+            }
+        },
+        watch: {
+          originOffset: function () {
+              this.resizeHandler();
+          }
+        },
         data: function () {
             return {
+                clickEvent: {x: undefined, y: undefined, valid: false},
+                armOrigin: {x: 65, y: 196},
+                originOffset: {x: 350, y: 143},
+                svgID: "prototriangle-logo",
                 logoURL: require('./assets/logo-masked.svg'),
                 logoAltText: "prototriangle logo",
                 menu: [
@@ -43,11 +70,11 @@
                         submenu: [
                             {
                                 text: "current projects",
-                                url: "/current"
+                                url: "/#current"
                             },
                             {
                                 text: "past projects",
-                                url: "/past"
+                                url: "/#past"
                             }
                         ]
                     }
@@ -94,6 +121,18 @@
         -webkit-background-clip: text;
         -moz-background-clip: text;
         background-clip: text;
+    }
+
+    svg {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        transition: all 3s ease;
+    }
+
+    .cover {
+        z-index: 999;
+        position: relative;
     }
 
 </style>

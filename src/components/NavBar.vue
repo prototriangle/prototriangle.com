@@ -30,7 +30,7 @@
         flex-direction: row;
     }
 
-    ul.nav-bar>li {
+    ul.nav-bar > li {
         width: 50%;
         display: block;
         float: left;
@@ -49,6 +49,7 @@
     ul.nav-bar li a:visited {
         text-decoration: none;
         color: black;
+        text-shadow: 0 0 6px white;
     }
 
     ul.nav-bar li a:hover,
