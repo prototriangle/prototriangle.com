@@ -31,7 +31,8 @@
         },
         created() {
             window.addEventListener("resize", this.resizeHandler);
-            window.setTimeout(this.resizeHandler, 10);
+            window.setTimeout(this.resizeHandler, 100);
+            window.setTimeout(this.resizeHandler, 1000);
         },
         destroyed() {
             window.removeEventListener("resize", this.resizeHandler);
