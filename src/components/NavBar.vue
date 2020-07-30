@@ -20,7 +20,7 @@
 
 <style>
     ul.nav-bar {
-        width: 100%;
+        /*width: 100%;*/
         font-size: 1.4rem;
         font-weight: bold;
         font-family: "Roboto Slab", serif;
@@ -28,10 +28,11 @@
         padding: 0;
         display: flex;
         flex-direction: row;
+        justify-content: right;
     }
 
     ul.nav-bar > li {
-        width: 50%;
+        /*width: 50%;*/
         display: block;
         float: left;
         /*text-align: center;*/

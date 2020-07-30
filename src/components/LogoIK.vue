@@ -142,6 +142,9 @@
                 return arr.join(' ');
             }
         },
+        created() {
+            window.setTimeout(() => this.svg = document.getElementById(this.idString), 20);
+        },
         methods: {
             runLoop() {
                 // console.log(this.countdown);
@@ -154,11 +157,10 @@
                 this.countdown -= 1;
             },
             coordConvert: function (screenCoords) {
-                const svg = document.getElementById(this.idString);
-                let pt = svg.createSVGPoint();
+                let pt = this.svg.createSVGPoint();
                 pt.x = screenCoords.x;
                 pt.y = screenCoords.y;
-                return pt.matrixTransform(svg.getScreenCTM().inverse());
+                return pt.matrixTransform(this.svg.getScreenCTM().inverse());
             }
         },
         data: function () {
@@ -171,6 +173,7 @@
                 countdown: 0,
                 timers: [],
                 threshold: 100,
+                svg: null
             }
         }
     }

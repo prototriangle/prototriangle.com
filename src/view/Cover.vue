@@ -21,7 +21,7 @@
 <style>
     .cover {
         display: grid;
-        width: 50vw;
+        width: 90vw;
         grid-template-columns: 1.25fr 2fr;
         grid-template-rows: 1fr 1fr;
         margin: calc(30vw - 10vh) auto auto auto;

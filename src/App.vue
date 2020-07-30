@@ -45,7 +45,7 @@
             resizeHandler() {
                 const r = document.getElementById("main-title").getBoundingClientRect();
                 // this.armOrigin = {x: window.innerWidth / 2, y: window.innerHeight / 2};
-                this.armOrigin = {x: r.x + this.originOffset.x, y: r.y + this.originOffset.y};
+                this.armOrigin = {x: r.x + this.originOffset.x + r.width, y: r.y + this.originOffset.y};
             }
         },
         watch: {
@@ -57,7 +57,7 @@
             return {
                 clickEvent: {x: undefined, y: undefined, valid: false},
                 armOrigin: {x: 65, y: 196},
-                originOffset: {x: 350, y: 143},
+                originOffset: {x: 100, y: 143},
                 svgID: "prototriangle-logo",
                 logoURL: require('./assets/logo-masked.svg'),
                 logoAltText: "prototriangle logo",
@@ -134,6 +134,7 @@
     .cover {
         z-index: 999;
         position: relative;
+        text-align: right;
     }
 
 </style>
