@@ -108,7 +108,7 @@
         }, watch: {
             origin: function (rawO) {
                 const o = this.coordConvert(rawO);
-                console.log("New Origin");
+                // console.log("New Origin");
                 console.log(o);
                 const d = solver.diffV(this.points[0], o);
                 const f = v => {

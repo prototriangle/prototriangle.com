@@ -39,7 +39,7 @@
         methods: {
             clickHandler(evt) {
                 this.clickEvent = {x: evt.clientX, y: evt.clientY, valid: true};
-                console.log(JSON.stringify(this.clickEvent));
+                // console.log(JSON.stringify(this.clickEvent));
             },
             resizeHandler() {
                 const r = document.getElementById("main-title").getBoundingClientRect();
