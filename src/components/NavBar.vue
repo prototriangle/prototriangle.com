@@ -49,13 +49,16 @@
     ul.nav-bar li a:visited {
         text-decoration: none;
         color: black;
-        text-shadow: 0 0 6px white;
+        text-shadow: 0 0 2px white;
+        transition: all 0.4s;
     }
 
     ul.nav-bar li a:hover,
     ul.nav-bar li a:focus,
     ul.nav-bar li a:active {
         text-decoration: underline;
-        color: darkslategrey;
+        color: #f6ffff;
+        text-shadow: 0 3px 8px black;
+        transition: all 0.2s;
     }
 </style>
