@@ -1,7 +1,10 @@
 <template>
     <div id="app" @click="clickHandler">
-        <LogoIK :click-event="clickEvent" :id-string="svgID" :origin="armOrigin"/>
-        <Cover>
+        <LogoIK :doIK="doIK" :click-event="clickEvent" :id-string="svgID" :origin="armOrigin"
+                :svg-width="logoWidth"
+                :svg-height="logoHeight"/>
+
+        <Cover @navigate="navHandler">
             <template v-slot:upper-box>
                 <h1 id="main-title" class="inset">prototriangle</h1>
             </template>
@@ -9,8 +12,7 @@
                 <NavBar :menu="menu"/>
             </template>
             <template v-slot:right-box>
-                <!--suppress HtmlUnknownTarget -->
-                <!--<img :src="logoURL" :alt="logoAltText">-->
+                <img id="static-logo" :src="logoURL" :alt="logoAltText"/>
             </template>
         </Cover>
     </div>
