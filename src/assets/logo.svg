@@ -1,72 +1,89 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="74.404938mm"
-   height="47.104164mm"
-   viewBox="0 0 74.404938 47.104164"
-   version="1.1"
-   id="svg869"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="logo.svg">
-  <defs
-     id="defs863" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="135.81542"
-     inkscape:cy="102.98545"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:window-width="1920"
-     inkscape:window-height="1056"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
-     inkscape:pagecheckerboard="true">
-    <inkscape:grid
-       type="xygrid"
-       id="grid1430" />
-  </sodipodi:namedview>
-  <metadata
-     id="metadata866">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-19.493958,-18.691968)">
-    <path
-       id="circle32278"
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 91.113436,31.707004 c -1.602697,2.288888 -4.413097,3.405389 -7.149587,2.840349 -2.73649,-0.565039 -4.874822,-2.703371 -5.439862,-5.439861 -0.56504,-2.73649 0.551461,-5.54689 2.840349,-7.149587 M 71.212708,46.212803 c 0,3.865993 -3.134007,7 -7,7 -3.865993,0 -7,-3.134007 -7,-7 0,-3.865993 3.134007,-7 7,-7 3.865993,0 7,3.134007 7,7 z M 54.01479,27.691969 c 0,3.865993 -3.134007,7 -7,7 -3.865993,0 -7,-3.134007 -7,-7 0,-3.865993 3.134007,-7 7,-7 3.865993,0 7,3.134007 7,7 z M 32.735042,50.131574 42.791058,34.329263 m 9.745738,-0.690521 6.356438,6.845395 m 11.161033,0.721614 9.723108,-8.334092 M 35.493958,56.796135 c 0,3.865993 -3.134007,7 -7,7 -3.865993,0 -7,-3.134007 -7,-7 0,-3.865993 3.134007,-7 7,-7 3.865993,0 7,3.134007 7,7 z"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csscssssssssssccccccsssss" />
-  </g>
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        viewBox="-25 -65 220 60"
+        height="290"
+        width="500">
+    <svg:style id="base-style">
+        svg {
+        stroke-width:10;
+        stroke-linecap:round;
+        stroke-linejoin:round;
+        stroke-miterlimit:4;
+        stroke-dasharray:none;
+        }
+
+        #link-layer, #joint-layer {
+        fill:none;
+        fill-opacity:0;
+        stroke:#000000;
+        stroke-opacity:1;
+        }
+
+        #joint-mask #mask-geom {
+        fill:none;
+        fill-opacity:0;
+        }
+
+        #mask-geom #white-path {
+        fill:none;
+        fill-opacity:0;
+        stroke:#ffffff;
+        stroke-opacity:1;
+        stroke-width: 20;
+        }
+
+        #mask-geom #black-circles {
+        fill:#000000;
+        fill-opacity:1;
+        stroke:#000000;
+        stroke-opacity:1;
+        stroke-width: 1;
+        }
+    </svg:style>
+    <svg:defs id="defs">
+        <svg:filter id="inset-shadow">
+            <!-- Shadow Offset -->
+            <svg:feOffset dx="3" dy="3"/>
+            <!-- Shadow Blur -->
+            <svg:feGaussianBlur stdDeviation="4" result="offset-blur"/>
+            <!-- Invert the drop shadow to create an inner shadow -->
+            <svg:feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+            <!-- Color & Opacity -->
+            <svg:feFlood flood-color="currentColor" flood-opacity="0.9" result="color"/>
+            <!-- Clip color inside shadow -->
+            <svg:feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+            <!-- Shadow Opacity -->
+            <svg:feComponentTransfer in="shadow" result="shadow">
+                <!--suppress HtmlUnknownTag -->
+                <svg:feFuncA type="linear" slope="1.1"/>
+            </svg:feComponentTransfer>
+        </svg:filter>
+        <svg:g id="joint-circles">
+            <svg:circle id="c1" cx="0" cy="0" r="20"/>
+            <svg:circle id="c2" cx="55" cy="-71" r="20"/>
+            <svg:circle id="c3" cx="110" cy="-11" r="20"/>
+            <svg:circle id="c4" cx="170" cy="-56" r="20" stroke-dasharray="92" transform="rotate(6, 170, -56)"/>
+        </svg:g>
+        <svg:polyline id="arm-path" points="0,0 55,-71 110,-11 170,-56"/>
+        <svg:g id="mask-geom">
+            <svg:use id="white-path" x="0" y="0" xlink:href="#arm-path"/>
+            <svg:use id="black-circles" x="0" y="0" xlink:href="#joint-circles"/>
+        </svg:g>
+        <svg:mask id="joint-mask">
+            <svg:use x="0" y="0" xlink:href="#mask-geom"/>
+        </svg:mask>
+    </svg:defs>
+    <svg:g filter="url(#inset-shadow)">
+        <svg:g id="link-layer" mask="url(#joint-mask)">
+            <svg:use x="0" y="0" xlink:href="#arm-path"/>
+        </svg:g>
+        <svg:g id="joint-layer">
+            <svg:use x="0" y="0" xlink:href="#joint-circles"/>
+        </svg:g>
+    </svg:g>
 </svg>
