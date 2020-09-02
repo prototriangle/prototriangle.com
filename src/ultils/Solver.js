@@ -25,6 +25,8 @@ export class Solver {
     }
 
     diffV(p1, p2) {
+        if (!p1 || !p2)
+            return null;
         return this.diff(p1.x, p1.y, p2.x, p2.y);
     }
 
