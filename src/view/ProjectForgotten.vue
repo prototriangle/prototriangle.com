@@ -4,7 +4,7 @@
         <h3>Game Design Studio Coursework</h3>
         <h4>Preview Video:</h4>
         <Html5Video width="100%"
-                    :download-url="videoSources.lastItem.url"
+                    :download-url="videoSources[1]"
                     :sources="videoSources"/>
         <GitHubGistEmbed gist-id="85be14d297c80c8b3c0a76375743325b"/>
     </div>
