@@ -5,7 +5,7 @@
                 <button @click.prevent.stop="$emit('project-modal-close')">
                     🗙
                 </button>
-                <h2 id="modal-title">{{ this.title }}</h2>
+                <h2 id="modal-title">Project: {{ this.title }}</h2>
             </div>
             <div class="modal-content-body">
                 <component v-bind:is="contentComponent" class="modal-content-component"></component>
