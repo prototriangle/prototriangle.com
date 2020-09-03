@@ -128,25 +128,38 @@ export default {
             logoAltText: "prototriangle logo",
             galleryContent: [
                 {
-                    title: "AR Collaborative Sandbox",
-                    image: require("@/assets/arcoregauss.png"),
-                    content: "Coming Soon..."
+                    title: "Robotic Hand",
+                    image: require("@/assets/abarm1.jpg"),
+                    status: "ongoing",
+                    subtitle: "Embedded development @ Augment Bionics"
                 },
                 {
-                    title: "\"Forgotten...\" (Game\xa0Design)",
-                    image: require("@/assets/forgottensnap.png"),
-                    content: "Coming Soon...",
+                    title: "Turtlebot3 Navigation",
+                    image: require("@/assets/rss_robot.jpg"),
+                    subtitle: "Practical project for 'Robotics: Science and Systems' @ The University of Edinburgh",
                     view: ProjectForgotten
                 },
                 {
-                    title: "Augment\xa0Bionics Robotic Hand",
-                    image: require("@/assets/abarm1.jpg"),
-                    content: "Coming Soon..."
+                    title: "\"Forgotten...\"",
+                    image: require("@/assets/forgottensnap.png"),
+                    subtitle: "Unity game for 'Game Design Studio' course @ The University of Edinburgh",
+                    view: ProjectForgotten
                 },
                 {
-                    title: "Sine\xa0&\xa0Punishment (Global Game\xa0Jam)",
+                    title: "\"Sine and Punishment\"",
                     image: require("@/assets/sineandpun_screenshot01.jpg"),
-                    content: "Coming Soon..."
+                    subtitle: "Unity game produced as part of The Global Game Jam"
+                },
+                {
+                    title: "Android Activity Tracker / IoT",
+                    image: require("@/assets/activetrack1.png"),
+                    subtitle: "Unity game produced as part of The Global Game Jam"
+                },
+                {
+                    title: "Greenhouse Automation",
+                    image: require("@/assets/greenhouse1.jpg"),
+                    status: "ongoing",
+                    subtitle: "Greenhouse automation project"
                 },
             ],
             menu: [
