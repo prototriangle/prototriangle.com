@@ -161,6 +161,12 @@ export default {
                     status: "ongoing",
                     subtitle: "Greenhouse automation project"
                 },
+                {
+                    title: "\"Songle\"",
+                    image: require("@/assets/songle_map_blur.png"),
+                    status: "ongoing",
+                    subtitle: "Greenhouse automation project"
+                },
             ],
             menu: [
                 {
