@@ -1,10 +1,12 @@
 <template>
     <div id="app" @click="clickHandler">
+        <div  class="scroll-section">
         <LogoIK :doIK="doIK" :click-event="clickEvent" :id-string="svgID" :origin="armOrigin"
                 :svg-width="logoWidth"
                 :svg-height="logoHeight"/>
+        </div>
 
-        <Cover @navigate="navHandler">
+        <Cover class="scroll-section" id="title-section" @navigate="navHandler">
             <template v-slot:upper-box>
                 <h1 id="main-title" class="inset">prototriangle</h1>
             </template>
@@ -16,7 +18,7 @@
             </template>
         </Cover>
 
-        <div :id="projectGalleryID">
+        <div class="scroll-section" id="projects">
             <h1>Projects</h1>
             <HexGallery :galleryContent="galleryContent"/>
         </div>
@@ -123,7 +125,6 @@ export default {
             logoWidth: 1900,
             logoHeight: 1080,
             svgID: "dynamic-logo",
-            projectGalleryID: "projects",
             logoURL: require('./assets/logo.svg'),
             logoAltText: "prototriangle logo",
             galleryContent: [
@@ -137,7 +138,6 @@ export default {
                     title: "Turtlebot3 Navigation",
                     image: require("@/assets/rss_robot.jpg"),
                     subtitle: "Practical project for 'Robotics: Science and Systems' @ The University of Edinburgh",
-                    view: ProjectForgotten
                 },
                 {
                     title: "\"Forgotten...\"",
@@ -181,6 +181,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -200,6 +201,14 @@ body {
     width: 100%;
     top: 0;
     left: 0;
+}
+
+#title-section {
+    margin-bottom: 26%;
+}
+
+.scroll-section {
+    scroll-snap-align: start;
 }
 
 h1 {
@@ -241,7 +250,7 @@ svg {
 }
 
 #projects {
-    margin-top: 58%;
+    //margin-top: 58%;
     margin-bottom: 16%;
 }
 

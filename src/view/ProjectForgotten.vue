@@ -6,19 +6,22 @@
         <Html5Video width="100%"
                     :download-url="videoSources[1]"
                     :sources="videoSources"/>
-        <GitHubGistEmbed gist-id="85be14d297c80c8b3c0a76375743325b"/>
+<!--        <GitHubGistEmbed gist-id="85be14d297c80c8b3c0a76375743325b"/>-->
     </div>
 </template>
 
 <script>
 
 
-import GitHubGistEmbed from "@/components/GitHubGistEmbed";
+// import GitHubGistEmbed from "@/components/GitHubGistEmbed";
 import Html5Video from "@/components/Html5Video";
 
 export default {
     name: "ProjectForgotten",
-    components: {Html5Video, GitHubGistEmbed},
+    components: {
+        Html5Video,
+        // GitHubGistEmbed,
+    },
     data: function () {
         return {
             videoSources: [
