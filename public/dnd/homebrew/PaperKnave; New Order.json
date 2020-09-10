@@ -1,0 +1,99 @@
+{
+	"_meta": {
+		"sources": [
+			{
+				"json": "NewOrder",
+				"abbreviation": "NO",
+				"full": "New Order",
+				"authors": [
+					"PaperKnave"
+				],
+				"version": "1.0.0",
+				"url": "https://prototriangle.com/dnd/homebrew/PaperKnave%3B%20New%20Order.json",
+				"targetSchema": "1.4.0"
+			}
+		],
+		"dateAdded": 1599753303,
+		"dateLastModified": 1599753303
+	},
+	"monster": [
+		{
+			"name": "Gnomish Skogkatt",
+			"source": "NewOrder",
+			"page": 0,
+			"size": "S",
+			"type": "beast",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 13,
+				"formula": "3d8"
+			},
+			"speed": {
+				"walk": {
+					"number": 25,
+					"condition": "when ridden"
+				},
+				"climb": 20
+			},
+			"str": 15,
+			"dex": 13,
+			"con": 11,
+			"int": 3,
+			"wis": 13,
+			"cha": 8,
+			"skill": {
+				"acrobatics": "+6",
+				"perception": "+4"
+			},
+			"passive": 14,
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Keen Smell",
+					"entries": [
+						"The cat has advantage on Wisdom (Perception) checks that rely on smell."
+					]
+				},
+				{
+					"name": "Pounce",
+					"entries": [
+						"If the cat moves at least 10 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 12} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the panther can make one bite attack against it as a bonus action. The cat can only pounce when not being ridden."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Bite",
+					"entries": [
+						"{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage."
+					]
+				},
+				{
+					"name": "Claw",
+					"entries": [
+						"{@atk mw} {@hit 2} to hit, reach 5 ft., one target. {@h}4 ({@damage 1d4 + 2}) slashing damage."
+					]
+				}
+			],
+			"traitTags": [
+				"Keen Senses",
+				"Pounce"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"prone"
+			]
+		}
+	]
+}
